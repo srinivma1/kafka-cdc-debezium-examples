@@ -1,0 +1,20 @@
+{
+ "name": "mongodb-sink",
+    "config":
+    {
+      "topics":"dbserver1.inventory.products,dbserver1.inventory.products_on_hand,dbserver1.inventory.customers,dbserver1.inventory.addresses,dbserver1.inventory.orders",
+      "connector.class":"at.grahsl.kafka.connect.mongodb.MongoDbSinkConnector",
+      "key.converter":"org.apache.kafka.connect.json.JsonConverter",
+      "key.converter.schemas.enable":true,
+      "value.converter":"org.apache.kafka.connect.json.JsonConverter",
+      "value.converter.schemas.enable":true,
+      "mongodb.connection.uri": "<PUT_YOUR_CONNECTION_STRING_HERE_AND_ADD_DATABASE_NAME>",
+      "mongodb.collections": "products,productsonhand,customers,addresses,orders",
+      "mongodb.collection.dbserver1.inventory.products": "products",
+      "mongodb.collection.dbserver1.inventory.products_on_hand": "productsonhand",
+      "mongodb.collection.dbserver1.inventory.customers": "customers",
+      "mongodb.collection.dbserver1.inventory.addresses": "addresses",
+      "mongodb.collection.dbserver1.inventory.orders": "orders",
+      "mongodb.change.data.capture.handler": "at.grahsl.kafka.connect.mongodb.cdc.debezium.rdbms.mysql.MysqlHandler"
+    }
+}

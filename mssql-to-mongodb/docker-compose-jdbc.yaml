@@ -1,0 +1,46 @@
+version: '2'
+services:
+  zookeeper:
+    image: debezium/zookeeper:${DEBEZIUM_VERSION}
+    ports:
+     - 2181:2181
+     - 2888:2888
+     - 3888:3888
+  kafka:
+    image: debezium/kafka:${DEBEZIUM_VERSION}
+    ports:
+     - 9092:9092
+    links:
+     - zookeeper
+    environment:
+     - ZOOKEEPER_CONNECT=zookeeper:2181
+  sqlserver:
+    image: microsoft/mssql-server-linux:2017-CU9-GDR2
+    ports:
+     - 1433:1433
+    environment:
+     - ACCEPT_EULA=Y
+     - MSSQL_PID=Standard
+     - SA_PASSWORD=Password!
+     - MSSQL_AGENT_ENABLED=true
+  mongodb:
+    image: mongo:latest
+    ports:
+     - 27017:27017  
+  connect:
+    image: debezium/connect:${DEBEZIUM_VERSION}
+    ports:
+     - 8083:8083
+    volumes:
+     - /root/kafka-cdc-debezium-examples/mssql-to-mongodb/hpgrahsl-kafka-connect-mongodb-1.3.1/:/kafka/connect/kafka-connect-mongodb/
+     - /root/kafka-cdc-debezium-examples/mssql-to-mongodb/debezium-debezium-connector-sqlserver-0.10.0:/kafka/connect/debezium-connector-sqlserver/ 
+    links:
+     - kafka
+     - sqlserver
+     - mongodb
+    environment:
+     - BOOTSTRAP_SERVERS=kafka:9092
+     - GROUP_ID=1
+     - CONFIG_STORAGE_TOPIC=my_connect_configs
+     - OFFSET_STORAGE_TOPIC=my_connect_offsets
+     - STATUS_STORAGE_TOPIC=my_connect_statuses
