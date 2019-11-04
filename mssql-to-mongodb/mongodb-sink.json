@@ -8,13 +8,13 @@
       "key.converter.schemas.enable":true,
       "value.converter":"org.apache.kafka.connect.json.JsonConverter",
       "value.converter.schemas.enable":true,
-      "mongodb.connection.uri": "<PUT_YOUR_CONNECTION_STRING_HERE_AND_ADD_DATABASE_NAME>",
+      "mongodb.connection.uri": "mongodb://kafka:kafka01@mongoserver:27017/Test",
       "mongodb.collections": "products,productsonhand,customers,addresses,orders",
       "mongodb.collection.dbserver1.inventory.products": "products",
       "mongodb.collection.dbserver1.inventory.products_on_hand": "productsonhand",
       "mongodb.collection.dbserver1.inventory.customers": "customers",
       "mongodb.collection.dbserver1.inventory.addresses": "addresses",
       "mongodb.collection.dbserver1.inventory.orders": "orders",
-      "mongodb.change.data.capture.handler": "at.grahsl.kafka.connect.mongodb.cdc.debezium.rdbms.mysql.MysqlHandler"
+      "mongodb.change.data.capture.handler": "at.grahsl.kafka.connect.mongodb.cdc.debezium.rdbms.RdbmsHandler"
     }
 }
