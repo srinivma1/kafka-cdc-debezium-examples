@@ -7,10 +7,7 @@ This setup is going to demonstrate how to receive events from SQLServer database
 
 * [JDBC Sink](#jdbc-sink)
   * [Topology](#topology)
-  * [Usage](#usage)
-    * [New record](#new-record)
-    * [Record update](#record-update)
-    * [Record delete](#record-delete)
+
 
 
 ## JDBC Sink
