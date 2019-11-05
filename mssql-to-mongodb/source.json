@@ -8,7 +8,7 @@
         "database.port" : "1433",
         "database.user" : "sa",
         "database.password" : "Password!",
-        "database.dbname" : "dbserver1",
+        "database.dbname" : "testDB",
         "database.history.kafka.bootstrap.servers" : "kafka:9092",
         "database.history.kafka.topic": "schema-changes.inventory",
 	"transforms": "route",
