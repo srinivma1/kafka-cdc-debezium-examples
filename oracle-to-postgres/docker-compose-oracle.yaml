@@ -32,7 +32,7 @@ services:
      - 8083:8083
      - 5005:5005
     volumes:
-     - /root/kafka-cdc-debezium-examples/oracle-to-postgres/hpgrahsl-kafka-connect-mongodb-1.3.1/:/kafka/connect/kafka-connect-postgres
+     - /root/kafka-cdc-debezium-examples/oracle-to-postgres/confluentinc-kafka-connect-jdbc-5.3.1/:/kafka/connect/kafka-connect-postgres
     links:
      - kafka
      - postgres
