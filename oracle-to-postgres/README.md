@@ -41,9 +41,9 @@ We are using Docker Compose to deploy following components
  * Kafka Broker
  * Kafka Connect with [Debezium](http://debezium.io/) and  [JDBC](https://github.com/confluentinc/kafka-connect-jdbc) Connectors. Debezium on the source side and JDBC on the sink side
 * PostgreSQL
-This assumes Oracle is running on localhost
-(or is reachable there, e.g. by means of running it within a VM or Docker container with appropriate port configurations)
-and set up with the configuration, users and grants described in the Debezium [Vagrant set-up](https://github.com/srinivma1/oracle-vagrant-box).
+
+
+Prepare Oracle docker image by following instructions in [Vagrant set-up](https://github.com/srinivma1/oracle-vagrant-box).
 Note that the connector is using the XStream API, which requires a license for the Golden Gate product
 (which itself is not required be installed, though).
 
