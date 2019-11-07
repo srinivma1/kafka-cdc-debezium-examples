@@ -11,7 +11,7 @@
         "auto.create": "true",
         "insert.mode": "upsert",
         "delete.enabled": "true",
-        "pk.fields": "id",
+        "pk.fields": "ID",
         "pk.mode": "record_key"
     }
 }
