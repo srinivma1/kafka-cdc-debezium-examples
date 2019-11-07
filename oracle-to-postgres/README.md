@@ -75,7 +75,7 @@ docker-compose -f docker-compose-oracle.yaml exec kafka /kafka/bin/kafka-console
     --bootstrap-server kafka:9092 \
     --from-beginning \
     --property print.key=true \
-    --topic server1.DEBEZIUM.CUSTOMERS
+    --topic CUSTOMERS
 
 # Modify other records in the database via Oracle client
 docker exec -i dbz_oracle sqlplus debezium/dbz@//localhost:1521/ORCLPDB1
