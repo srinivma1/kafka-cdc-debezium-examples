@@ -39,7 +39,7 @@ We are using Docker Compose to deploy following components
  * Kafka
  * ZooKeeper
  * Kafka Broker
- * Kafka Connect with [Debezium](http://debezium.io/) and  [JDBC](https://github.com/confluentinc/kafka-connect-jdbc) Connectors
+ * Kafka Connect with [Debezium](http://debezium.io/) and  [JDBC](https://github.com/confluentinc/kafka-connect-jdbc) Connectors. Debezium on the source side and JDBC on the sink side
 * PostgreSQL
 This assumes Oracle is running on localhost
 (or is reachable there, e.g. by means of running it within a VM or Docker container with appropriate port configurations)
