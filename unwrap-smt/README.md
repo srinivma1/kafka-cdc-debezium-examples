@@ -1,6 +1,6 @@
 # Debezium Unwrap SMT Demo
 
-This setup is going to demonstrate how to receive events from MySQL database and stream them down to a PostgreSQL database and/or an Elasticsearch server using the [Debezium Event Flattening SMT](http://debezium.io/docs/configuration/event-flattening/).
+This setup is going to demonstrate how to receive events from MySQL database and stream them down to a PostgreSQL database and/or an Elasticsearch server using the [Debezium Event Flattening SMT](https://debezium.io/docs/configuration/event-flattening/).
 
 ## Table of Contents
 
@@ -56,7 +56,7 @@ We are using Docker Compose to deploy following components
 * Kafka
   * ZooKeeper
   * Kafka Broker
-  * Kafka Connect with [Debezium](http://debezium.io/) and  [JDBC](https://github.com/confluentinc/kafka-connect-jdbc) Connectors
+  * Kafka Connect with [Debezium](https://debezium.io/) and  [JDBC](https://github.com/confluentinc/kafka-connect-jdbc) Connectors
 * PostgreSQL
 
 ### Usage
@@ -65,7 +65,7 @@ How to run:
 
 ```shell
 # Start the application
-export DEBEZIUM_VERSION=0.10
+export DEBEZIUM_VERSION=1.0
 docker-compose -f docker-compose-jdbc.yaml up
 
 # Start PostgreSQL connector
@@ -135,7 +135,7 @@ Rows matched: 1  Changed: 1  Warnings: 0
 Verify that record in PostgreSQL is updated:
 
 ```shell
-docker-compose-f docker-compose-jdbc.yaml  exec postgres bash -c 'psql -U $POSTGRES_USER $POSTGRES_DB -c "select * from customers"'
+docker-compose -f docker-compose-jdbc.yaml  exec postgres bash -c 'psql -U $POSTGRES_USER $POSTGRES_DB -c "select * from customers"'
  last_name |  id  | first_name |         email         
 -----------+------+------------+-----------------------
 ...
@@ -209,7 +209,7 @@ We are using Docker Compose to deploy the following components:
 * Kafka
   * ZooKeeper
   * Kafka Broker
-  * Kafka Connect with [Debezium](http://debezium.io/) and  [Elasticsearch](https://github.com/confluentinc/kafka-connect-elasticsearch) Connectors
+  * Kafka Connect with [Debezium](https://debezium.io/) and  [Elasticsearch](https://github.com/confluentinc/kafka-connect-elasticsearch) Connectors
 * Elasticsearch
 
 ### Usage
@@ -219,7 +219,7 @@ How to run:
 ```shell
 # Start the application
 
-export DEBEZIUM_VERSION=0.10
+export DEBEZIUM_VERSION=1.0
 docker-compose -f docker-compose-es.yaml up
 
 # Start Elasticsearch connector
@@ -501,7 +501,7 @@ We are using Docker Compose to deploy the following components:
 * Kafka
   * ZooKeeper
   * Kafka Broker
-  * Kafka Connect with [Debezium](http://debezium.io/), [JDBC](https://github.com/confluentinc/kafka-connect-jdbc) and  [Elasticsearch](https://github.com/confluentinc/kafka-connect-elasticsearch) Connectors
+  * Kafka Connect with [Debezium](https://debezium.io/), [JDBC](https://github.com/confluentinc/kafka-connect-jdbc) and  [Elasticsearch](https://github.com/confluentinc/kafka-connect-elasticsearch) Connectors
 * PostgreSQL
 * Elasticsearch
 
@@ -511,7 +511,7 @@ How to run:
 
 ```shell
 # Start the application
-export DEBEZIUM_VERSION=0.10
+export DEBEZIUM_VERSION=1.0
 docker-compose up
 
 # Start Elasticsearch connector
